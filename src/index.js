@@ -6,7 +6,7 @@ import './index.css';
 import App from './App';
 
 const client = new ApolloClient({
-    uri:  process.env.REACT_APP_GRAPHCMS_URI,
+    uri:  'https://api-ap-northeast-1.hygraph.com/v2/cl7t1t1xa0fa101tf0k863kah/master',
     cache: new InMemoryCache(),
 });
 
