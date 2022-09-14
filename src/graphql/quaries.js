@@ -3,31 +3,24 @@ import { gql } from '@apollo/client';
 const GET_BLOGS_INFO = gql `
     query { 
       
-        authors {
+
+      posts {
+    author {
+      ... on Author {
+        id
+        name
+        avatar {
+          url
+        }
+      }
+    }
     id
-    name
-    avatar {
+    title
+    slug
+    coverPhoto {
       url
     }
   }
-  
-  #     posts {
-  #   author {
-  #     ... on Author {
-  #       id
-  #       name
-  #       avatar {
-  #         url
-  #       }
-  #     }
-  #   }
-  #   id
-  #   title
-  #   slug
-  #   coverPhoto {
-  #     url
-  #   }
-  # }
 
 }
     
