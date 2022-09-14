@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Card, CardActions, CardContent, CardHeader, CardMedia, Divider, Typography } from '@mui/material';
+import { Avatar, Card, CardActions, CardContent, CardHeader, CardMedia, Divider, Typography, Button } from '@mui/material';
 
 const CardEL = ({title, slug, coverPhoto, author}) => {
     console.log(coverPhoto)
@@ -26,7 +26,12 @@ const CardEL = ({title, slug, coverPhoto, author}) => {
                 </Typography>
             </CardContent>
             <Divider variant='middle' sx={{margin:'10px'}}/>
-            <CardActions></CardActions>
+            <CardActions disableSpacing>
+                
+                <Button variant="outlined" size='small'
+                        sx={{width:'100px', borderRedius:3}}>Read ...
+                </Button>
+            </CardActions>
        </Card>
     );
 };
