@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Card, CardActions, CardContent, CardHeader, CardMedia, Typography } from '@mui/material';
+import { Avatar, Card, CardActions, CardContent, CardHeader, CardMedia, Divider, Typography } from '@mui/material';
 
 const CardEL = ({title, slug, coverPhoto, author}) => {
     console.log(coverPhoto)
@@ -8,7 +8,7 @@ const CardEL = ({title, slug, coverPhoto, author}) => {
             <CardHeader 
             avatar={<Avatar  sx={{marginRight:2}}/>}
             title={
-            <Typography component='p' variant='p' color="text.primary">
+            <Typography component='p' variant='p' color="text.secondary">
                 {author.name}
             </Typography>}
             />
@@ -17,7 +17,15 @@ const CardEL = ({title, slug, coverPhoto, author}) => {
                height='194'
                image='https://media.graphassets.com/S1MD4SCcRB6tcz24RbQq'
                alt={slug}/>
-            <CardContent></CardContent>
+            <CardContent>
+                <Typography
+                  component='h3'
+                  variant='h6'
+                  color="text.primary">
+                    {title}
+                </Typography>
+            </CardContent>
+            <Divider variant='middle' sx={{margin:'10px'}}/>
             <CardActions></CardActions>
        </Card>
     );
