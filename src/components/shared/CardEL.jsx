@@ -1,12 +1,20 @@
 import React from 'react';
-import { Avatar, Card, CardActions, CardContent, CardHeader, CardMedia, Divider, Typography, Button } from '@mui/material';
+import { Avatar,
+         Card,
+         CardActions,
+         CardContent,
+         CardHeader,
+         CardMedia,
+         Divider,
+         Typography,
+         Button } from '@mui/material';
 
 const CardEL = ({title, slug, coverPhoto, author}) => {
-    console.log(coverPhoto)
+    console.log(author?.avatar?.url)
     return (
        <Card sx={{boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px", borderRadius:4}}>
             <CardHeader 
-            avatar={<Avatar  sx={{marginRight:2}}/>}
+            avatar={<Avatar src={author?.avatar?.url}  sx={{marginRight:2}}/>}
             title={
             <Typography component='p' variant='p' color="text.secondary">
                 {author.name}
@@ -15,7 +23,7 @@ const CardEL = ({title, slug, coverPhoto, author}) => {
             <CardMedia 
                component='img'
                height='194'
-               image='https://media.graphassets.com/S1MD4SCcRB6tcz24RbQq'
+               image={coverPhoto?.url}
                alt={slug}/>
             <CardContent>
                 <Typography
