@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_AUTHOR } from '../../graphql/quaries';
-import { Avatar, Grid, Typography } from '@mui/material';
+import { Avatar, Divider, Grid, Typography } from '@mui/material';
 
 const Author = () => {
     const { loading, data, errors } = useQuery(GET_AUTHOR);
@@ -10,15 +10,27 @@ const Author = () => {
     console.log(data)
     const { authors } = data;
     return (
-       <Grid
-       sx={{boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px", borderRadius:4}}
-       >
-            {authors.map(author => (
-                <Grid item xs={12} padding={2} key={author.id}>
+        <Grid
+        container
+        sx={{boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px", borderRadius:4}}
+        >
+            {authors.map((author, index) => (
+            < React.Fragment key={author.id}>
+                <Grid item xs={12} padding={2} >
                     <Avatar src={author.avatar.url} sx={{marginRight:2}}/>
                     <Typography component='p' variant='p'>{author.name}</Typography>
-                </Grid>
-            ))}
+          </Grid>
+            {
+                index !== authors.length - 1 && (
+          <Grid item xs={12} >
+
+                    <Divider variant='middle' />
+          </Grid>
+                )
+            }
+                
+                </React.Fragment>
+                ))}
        </Grid>
     );
 };
