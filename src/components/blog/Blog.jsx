@@ -5,7 +5,7 @@ import { Grid } from '@mui/material';
 import CardEL from '../shared/CardEL';
 
 const Blog = () => {
-    const { loading, data, errors } =useQuery(GET_BLOGS_INFO);
+    const { loading, data, errors } = useQuery(GET_BLOGS_INFO);
     console.log (data)
     if (loading) return <h4>Loading ...</h4>
     if (errors) return <h4>error();</h4>

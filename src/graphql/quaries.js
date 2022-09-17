@@ -1,28 +1,24 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
-const GET_BLOGS_INFO = gql `
-    query { 
-      
-
-      posts {
-    author {
-      ... on Author {
-        id
-        name
-        avatar {
-          url
+export const GET_BLOGS_INFO = gql`
+  query {
+    posts {
+      author {
+        ... on Author {
+          id
+          name
+          avatar {
+            id
+            url
+          }
         }
       }
-    }
-    id
-    title
-    slug
-    coverPhoto {
-      url
+      id
+      title
+      slug
+      coverPhoto {
+        url
+      }
     }
   }
-
-}
-    
 `;
-export {GET_BLOGS_INFO};
