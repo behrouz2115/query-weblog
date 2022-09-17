@@ -22,3 +22,15 @@ export const GET_BLOGS_INFO = gql`
     }
   }
 `;
+export const GET_AUTHOR = gql `
+    query {
+      authors {
+        id
+        name
+        slug
+        avatar {
+          url
+        }
+      }
+    }
+`
