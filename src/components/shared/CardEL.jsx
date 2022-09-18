@@ -8,6 +8,7 @@ import { Avatar,
          Divider,
          Typography,
          Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const CardEL = ({title, slug, coverPhoto, author}) => {
     console.log(author?.avatar?.url)
@@ -35,10 +36,11 @@ const CardEL = ({title, slug, coverPhoto, author}) => {
             </CardContent>
             <Divider variant='middle' sx={{margin:'10px'}}/>
             <CardActions disableSpacing>
-                
+                <Link to={`/blogs/${slug}`} style={{textDecoration:'none', width:'100%'}}>
                 <Button variant="outlined" size='small'
                         sx={{width:'100px', borderRedius:3}}>Read ...
                 </Button>
+                </Link>
             </CardActions>
        </Card>
     );
