@@ -35,8 +35,8 @@ import { gql } from "@apollo/client";
     }
 `
 const GET_AUTHOR_INFO =gql`
-      guery getAuthorInfo($slug:String!) {
-        {
+      query getAuthorInfo($slug:String!) {
+     
   author(where: {slug: $slug}) {
     id
     avatar {
@@ -55,8 +55,8 @@ const GET_AUTHOR_INFO =gql`
     id
     slug
     title
-  }
 }
       }
+      
 `
-export {GET_BLOGS_INFO, GET_AUTHOR_INFO,GET_AUTHOR}
+export {GET_BLOGS_INFO, GET_AUTHOR_INFO, GET_AUTHOR}
