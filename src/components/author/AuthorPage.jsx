@@ -12,13 +12,17 @@ const AuthorPage = () => {
     if (loading) return <h4>Loading ...</h4>
     if (errors) return <h4>error</h4>
     console.log(data)
+    const {author} = data;
     return (
         <Container maxWidth='lg'>
             <Grid container mt={10}>
                 <Grid item  xs={12} display='flex' flexDirection='column' alignItems='center'>
-                    <Avatar src={data.author.avatar.url} sx={{width:250, height:250}} />
-                    <Typography component='h3' variant='h6' fontWeight={700} mt={4}>{data.author.name}</Typography>
-                    <Typography component='p' variant='h6' color='text.secondary' mt={2}>{data.author.field}</Typography>
+                    <Avatar src={author.avatar.url} sx={{width:250, height:250}} />
+                    <Typography component='h3' variant='h6' fontWeight={700} mt={4}>{author.name}</Typography>
+                    <Typography component='p' variant='h6' color='text.secondary' mt={2}>{author.field}</Typography>
+                </Grid>
+                <Grid item xs={12}>
+                    {author.description.html}
                 </Grid>
             </Grid>
 
