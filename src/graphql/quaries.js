@@ -47,8 +47,7 @@ const GET_AUTHOR_INFO =gql`
     description {
       html
     }
-  }
-  posts {
+    posts {
     coverPhoto {
       url
     }
@@ -56,6 +55,8 @@ const GET_AUTHOR_INFO =gql`
     slug
     title
 }
+  }
+  
       }
       
 `
