@@ -5,13 +5,14 @@ import { GET_AUTHOR_INFO } from '../../graphql/quaries';
 import { Avatar, Container, Grid, Typography } from '@mui/material';
 import sanitizeHtml from 'sanitize-html';
 import CardEl from '../../components/shared/CardEL';
+import Loader from '../shared/Loader';
 
 const AuthorPage = () => {
     const { slug } = useParams();
     const { loading, data, errors } = useQuery(GET_AUTHOR_INFO, {
         variables:{ slug }
     });
-    if (loading) return <h4>Loading ...</h4>
+    if (loading) return <Loader/>
     if (errors) return <h4>error</h4>
     console.log(data)
     const {author: {name, field, avatar, description, posts}} = data;
