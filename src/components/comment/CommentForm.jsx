@@ -22,6 +22,12 @@ const CommentForm = ({ slug }) => {
         })
     }
   }
+  if (data){
+    toast.success('comment sent', {
+        position:'top-center'
+    })
+  }
+
   console.log(data)
   return (
     <Grid
