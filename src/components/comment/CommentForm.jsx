@@ -10,22 +10,25 @@ const CommentForm = ({ slug }) => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [text, setText] = useState();
+  const [ pressed, setPressed ] = useState(false);
   const [ sendComment, { loading, data, errors } ] = useMutation(SEND_COMMENT,{
     variables:{name, email, text, slug}
   });
   const sendHandker = () => {
     if(name && email && text){
         sendComment();
+        setPressed(true);
     } else {
         toast.warn("enter all information please",{
             position:'top-center'
         })
     }
   }
-  if (data){
+  if (data && pressed){
     toast.success('comment sent', {
         position:'top-center'
-    })
+    });
+    setPressed(false);
   }
 
   console.log(data)

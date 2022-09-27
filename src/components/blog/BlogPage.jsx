@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import sanitizeHtml from 'sanitize-html';
 import CommentForm from '../comment/CommentForm';
+import Comments from '../comment/Comments';
 
 const BlogPage = () => {
     const { slug } = useParams();
@@ -51,6 +52,9 @@ const BlogPage = () => {
             </Grid>
             <Grid item xs={12}>
                 <CommentForm slug={slug}/>
+            </Grid>
+            <Grid item xs={12}>
+                <Comments slug={slug}/>
             </Grid>
         </Grid>
     </Container>
