@@ -23,7 +23,7 @@ const BlogPage = () => {
 
     if (loading) return <Loader/>
     if (errors) return <h4>error</h4>
-    console.log(data)
+
     return (
     <Container  maxWidth='lg'>
         <Grid container>

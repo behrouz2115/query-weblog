@@ -31,7 +31,7 @@ const CommentForm = ({ slug }) => {
     setPressed(false);
   }
 
-  console.log(data)
+  if (errors) return <h4>error</h4>
   return (
     <Grid
       container

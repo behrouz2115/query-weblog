@@ -6,7 +6,8 @@ import { Avatar, Box, Grid, Typography } from '@mui/material';
 const Comments = ({slug}) => {
     const { loading, data, errors } =useQuery(GET_POST_COMMENT, {variables:{slug}});
     if (loading) return null;
-    console.log(data)
+    if (errors) return <h4>error</h4>
+
     return (
         <Grid container  sx={{
             boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px",
