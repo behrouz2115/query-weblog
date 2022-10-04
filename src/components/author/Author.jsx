@@ -9,7 +9,6 @@ const Author = () => {
     const { loading, data, errors } = useQuery(GET_AUTHOR);
     if (loading) return <Loader/>
     if (errors) return <h3>errors</h3>
-    console.log(data)
     const { authors } = data;
     return (
         <Grid
