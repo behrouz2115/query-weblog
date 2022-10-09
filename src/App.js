@@ -6,8 +6,6 @@ import AuthorPage from './components/author/AuthorPage';
 import ScrollToTop from './components/shared/ScrollToTop';
 
 
-
-
 function App() {
 
   return (
@@ -18,8 +16,7 @@ function App() {
           <Route path='/' element={<HomePage/>}/>
           <Route path='/blogs/:slug' element={<BlogPage/>}/>
           <Route path='/authors/:slug' element={<AuthorPage/>}/>
-        </Routes>
-       
+        </Routes>  
        </Layout>
    
   );

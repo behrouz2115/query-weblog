@@ -16,7 +16,6 @@ const HomePage = () => {
                 <Blog/>
                 </Grid>
             </Grid>
-
         </Container>
     );
 };
