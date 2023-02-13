@@ -7,9 +7,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const CommentForm = ({ slug }) => {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [text, setText] = useState();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [text, setText] = useState('');
   const [ pressed, setPressed ] = useState(false);
   const [ sendComment, { loading, data, errors } ] = useMutation(SEND_COMMENT,{
     variables:{name, email, text, slug}
@@ -29,6 +29,9 @@ const CommentForm = ({ slug }) => {
         position:'top-center'
     });
     setPressed(false);
+    setName('');
+    setEmail('');
+    setText('');
   }
 
   if (errors) return <h4>error</h4>
